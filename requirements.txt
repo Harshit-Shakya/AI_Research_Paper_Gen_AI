@@ -1,0 +1,42 @@
+# Core Data Science
+numpy
+pandas
+
+# Hugging Face
+datasets
+transformers
+sentence-transformers
+huggingface-hub
+
+# Vector Database
+faiss-cpu
+
+# NLP
+nltk
+spacy
+keybert
+
+# LangChain
+langchain
+langchain-community
+langchain-core
+langchain-groq
+
+# LLM API
+groq
+
+# Machine Learning
+scikit-learn
+torch
+
+# Utilities
+python-dotenv
+tqdm
+
+# Notebook
+jupyter
+ipykernel
+
+# Optional Visualization
+matplotlib
+seaborn
