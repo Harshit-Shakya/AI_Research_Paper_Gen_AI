@@ -1,114 +1,144 @@
 # 📚 AI Research Paper Intelligence System
 
-An AI-powered research assistant that helps users discover, retrieve, summarize, compare, and analyze machine learning research papers using semantic search, large language models (LLMs), and vector databases.
+## 🔎 About the Project
 
-## 🚀 Overview
+**AI Research Paper Intelligence System** is an intelligent research assistance platform designed to simplify the process of discovering, retrieving, understanding, and comparing machine learning research papers.
 
-The AI Research Paper Intelligence System enables users to search a large collection of machine learning research papers using natural language queries. Instead of relying on keyword matching, the system performs semantic similarity search using Sentence Transformers and FAISS to retrieve the most relevant papers.
+The system allows users to search through a large collection of research papers using natural language queries. Rather than depending only on traditional keyword-based matching, it uses **Sentence Transformer embeddings** and **FAISS** to perform semantic similarity search and identify papers that are contextually relevant to the user's query.
 
-The retrieved papers can then be summarized, compared, and analyzed using Large Language Models (LLMs) integrated through LangChain.
-
----
-
-## ✨ Features
-
-- 🔍 Semantic search over research papers
-- 📄 AI-generated paper summaries
-- 🤖 LLM-powered research assistant
-- 📚 FAISS vector database for fast retrieval
-- 🧠 Sentence Transformer embeddings
-- 🏷 Keyword extraction
-- ⚖ Research paper comparison
-- 💬 Natural language querying
-- 🔧 LangChain tool integration
+After retrieving relevant papers, the system uses **Large Language Models (LLMs)** through **LangChain** to summarize content, extract useful information, compare multiple papers, and assist users in understanding research literature more efficiently.
 
 ---
 
-## 🛠 Tech Stack
+## 🌟 Key Capabilities
 
-| Category | Technology |
-|----------|------------|
-| Language | Python |
-| Dataset | ML-ArXiv Papers Dataset |
-| Embedding Model | all-MiniLM-L6-v2 |
-| Vector Database | FAISS |
-| Framework | LangChain |
-| LLM | Groq (Llama 3.1 8B Instant) |
-| NLP | Sentence Transformers |
-| Keyword Extraction | KeyBERT |
-| Notebook | Jupyter Notebook |
+🔍 **Semantic Paper Search** — Finds research papers based on contextual similarity rather than exact keyword matches.
+
+📄 **Automated Summarization** — Generates concise AI-based summaries of retrieved research papers.
+
+🤖 **LLM Research Assistant** — Uses a Large Language Model to assist with research-related queries and analysis.
+
+📚 **Efficient Vector Retrieval** — Uses FAISS for fast similarity search across stored paper embeddings.
+
+🧠 **Semantic Embeddings** — Generates vector representations using Sentence Transformers.
+
+🏷 **Keyword Identification** — Extracts important keywords and topics from research content.
+
+⚖ **Paper Comparison** — Helps compare multiple relevant research papers.
+
+💬 **Natural Language Interaction** — Allows users to search using simple natural language queries.
+
+🔧 **LangChain Integration** — Connects different AI tools and components through a LangChain-based pipeline.
 
 ---
 
-## 📂 Project Structure
+## 🧰 Technologies Used
 
-```
+| Component               | Technology                  |
+| ----------------------- | --------------------------- |
+| Programming Language    | Python                      |
+| Research Dataset        | ML-ArXiv Papers Dataset     |
+| Embedding Model         | all-MiniLM-L6-v2            |
+| Vector Store            | FAISS                       |
+| AI Framework            | LangChain                   |
+| Large Language Model    | Groq (Llama 3.1 8B Instant) |
+| NLP Library             | Sentence Transformers       |
+| Keyword Extraction      | KeyBERT                     |
+| Development Environment | Jupyter Notebook            |
+
+---
+
+## 🗂 Repository Layout
+
+```text
 AI-Research-Paper-Intelligence-System/
-
-│── Coding_Blocks_Research_Paper_Intelligence_System.ipynb
-│── paper_faiss.index
-│── README.md
-│── requirements.txt
+│
+├── Coding_Blocks_Research_Paper_Intelligence_System.ipynb
+├── paper_faiss.index
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## ⚙️ Workflow
+## 🔄 How the System Works
 
-1. Load the ML-ArXiv research paper dataset.
-2. Preprocess titles and abstracts.
-3. Generate embeddings using Sentence Transformers.
-4. Store embeddings in a FAISS vector index.
-5. Accept a user's research query.
-6. Retrieve the most relevant papers using semantic similarity.
-7. Summarize the retrieved papers using an LLM.
-8. Extract important keywords.
-9. Compare multiple research papers.
-10. Present the results to the user.
+The complete processing pipeline follows these steps:
 
----
-
-## 📊 Architecture
-
-```
-                User Query
-                     │
-                     ▼
-          Sentence Transformer
-                     │
-                     ▼
-             Query Embedding
-                     │
-                     ▼
-             FAISS Search Index
-                     │
-                     ▼
-      Top Relevant Research Papers
-                     │
-                     ▼
-         LangChain Tool Pipeline
-                     │
-      ┌──────────────┼──────────────┐
-      ▼              ▼              ▼
- Summarization   Keywords     Comparison
-      │              │              │
-      └──────────────┼──────────────┘
-                     ▼
-              Final AI Response
-```
+1. The **ML-ArXiv research paper dataset** is loaded into the system.
+2. Research paper **titles and abstracts** are cleaned and preprocessed.
+3. **Sentence Transformers** are used to convert the textual data into embeddings.
+4. The generated embeddings are stored inside a **FAISS vector index**.
+5. The user provides a research topic or query in natural language.
+6. The query is converted into an embedding and matched against the FAISS index.
+7. The most semantically relevant research papers are retrieved.
+8. An **LLM** generates summaries of the selected papers.
+9. Important keywords are extracted from the research content.
+10. Multiple papers can be compared, and the final results are presented to the user.
 
 ---
 
-## 📦 Installation
+## 🏗 System Architecture
 
-### Clone the repository
+```text
+                 ┌───────────────┐
+                 │  User Query   │
+                 └───────┬───────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │ Sentence Transformer │
+              └──────────┬───────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Query Embedding │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ FAISS Search     │
+                │ Index            │
+                └────────┬─────────┘
+                         │
+                         ▼
+             ┌─────────────────────────┐
+             │ Most Relevant Research  │
+             │ Papers                  │
+             └───────────┬─────────────┘
+                         │
+                         ▼
+               ┌────────────────────┐
+               │ LangChain Pipeline │
+               └─────────┬──────────┘
+                         │
+             ┌───────────┼───────────┐
+             │           │           │
+             ▼           ▼           ▼
+       Summarization   Keywords   Comparison
+             │           │           │
+             └───────────┼───────────┘
+                         │
+                         ▼
+                 ┌───────────────┐
+                 │ AI Response   │
+                 └───────────────┘
+```
+
+---
+
+## ⚙️ Setup and Installation
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/AI-Research-Paper-Intelligence-System.git
 cd AI-Research-Paper-Intelligence-System
 ```
 
-### Install dependencies
+### 2. Install Required Packages
+
+Install all project dependencies using:
 
 ```bash
 pip install -r requirements.txt
@@ -116,88 +146,89 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Usage
+## ▶️ Running the Project
 
-1. Open the Jupyter Notebook.
+### Step 1: Start Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-2. Run all notebook cells in sequence.
+### Step 2: Execute the Notebook
 
-3. Enter your research query.
+Open the project notebook and run all cells in the correct sequence.
 
-Example:
+### Step 3: Provide a Research Query
 
-```
+For example:
+
+```text
 Deep Learning for Medical Image Reconstruction
 ```
 
-The system will:
+Based on the query, the system will:
 
-- Retrieve similar research papers
-- Generate summaries
-- Extract important keywords
-- Compare related papers
-
----
-
-## 📖 Example Queries
-
-- Transformer models for NLP
-- Deep Learning for Medical Imaging
-- Reinforcement Learning
-- Explainable AI
-- Computer Vision
-- Federated Learning
-- Graph Neural Networks
-- AI in Healthcare
+* Find semantically similar research papers
+* Generate AI-based summaries
+* Identify important keywords
+* Compare related research papers
 
 ---
 
-## 🎯 Future Improvements
+## 💡 Sample Research Queries
 
-- Streamlit web application
-- PDF upload support
-- Research report generation (PDF/DOCX)
-- Citation generation
-- Multi-agent research workflow
-- Interactive dashboard
-- Chat with uploaded research papers
-- RAG-based question answering
+You can test the system with topics such as:
+
+* Transformer Models for NLP
+* Deep Learning for Medical Imaging
+* Reinforcement Learning
+* Explainable AI
+* Computer Vision
+* Federated Learning
+* Graph Neural Networks
+* AI in Healthcare
 
 ---
 
-## 📈 Learning Outcomes
+## 🚀 Planned Enhancements
 
-This project demonstrates practical knowledge of:
+Possible future extensions of the project include:
 
-- Natural Language Processing (NLP)
-- Semantic Search
-- Vector Databases
-- Sentence Embeddings
-- Large Language Models (LLMs)
-- LangChain
-- AI Agents
-- Retrieval-Augmented Generation (RAG)
-- Information Retrieval
+* Building a Streamlit-based web application
+* Adding research paper PDF upload functionality
+* Generating research reports in PDF and DOCX formats
+* Automatically generating citations
+* Developing a multi-agent research workflow
+* Creating an interactive analytics dashboard
+* Enabling conversations with uploaded research papers
+* Implementing RAG-based question answering
+
+---
+
+## 🎓 Skills and Learning Outcomes
+
+Through this project, practical understanding and implementation experience are demonstrated in the following areas:
+
+* Natural Language Processing (NLP)
+* Semantic Search
+* Vector Databases
+* Sentence Embeddings
+* Large Language Models (LLMs)
+* LangChain
+* AI Agents
+* Retrieval-Augmented Generation (RAG)
+* Information Retrieval
 
 ---
 
 ## 📜 License
 
-This project is developed for educational and research purposes.
+This project has been created for **educational and research purposes**.
 
 ---
 
 ## 👨‍💻 Author
 
-**Rituraj**
+**Harshit Shakya**
 
-B.Tech Computer Science Engineering  
-Delhi Technical Campus (GGSIPU)
 
-GitHub: https://github.com/rituraj-cell
-
-LinkedIn: https://www.linkedin.com/in/rituraj-raj-761ab7380
